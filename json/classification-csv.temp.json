@@ -1,0 +1,32 @@
+{
+    "Template" : {
+        "field"     : "key",
+        "required"  : True,
+        "value"     : "Temp_B",
+        "type"      : "String"
+    },
+    "name" : {
+        "field"     : "name",
+        "required"  : True,
+        "value"     : "CVS Classification Project",
+        "type"      : "String"
+    },
+    "descrption" : {
+        "field"     : "descrption",
+        "required"  : True,
+        "value"     : "The template define cvs classification",
+        "type"      : "String"
+    }
+    "images" : {
+        "field"     : "images",
+        "required"  : True,
+        "value"     : "images\image_csv_classification.png",
+        "type"      : "List"
+    },
+    "category" : {
+        "field"     : "category",
+        "required"  : True,
+        "default"   : "cvs classification",
+        "type"      : "String"
+    }
+}

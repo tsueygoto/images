@@ -1,0 +1,32 @@
+{
+    "Template" : {
+        "field"     : "key",
+        "required"  : True,
+        "value"     : "Temp_A",
+        "type"      : "String"
+    },
+    "name" : {
+        "field"     : "name",
+        "required"  : True,
+        "value"     : "Classification Image Project",
+        "type"      : "String"
+    },
+    "descrption" : {
+        "field"     : "descrption",
+        "required"  : True,
+        "value"     : "The template define image classification.",
+        "type"      : "String"
+    },
+    "images" : {
+        "field"     : "images",
+        "required"  : True,
+        "value"     : "images\image_image_classification.png",
+        "type"      : "image list"
+    },
+    "category" : {
+        "field"     : "category",
+        "required"  : True,
+        "value"     : "image classification",
+        "type"      : "String"
+    }
+}
