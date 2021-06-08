@@ -1,0 +1,108 @@
+{
+    "template"  : "Temp_A",
+    "id"        : "c91619e0-bb87-11eb-b91e-a1334424a966",
+    "name"      : "Proj_A",
+    "parameters" : {
+        "weights" : {
+            "field"     : "Weights",
+            "attribute" : "optional",
+            "default"   : "None"
+            "type"      : "String",
+            "values"    : ["None", "imagenet", "the path to the weights file to be loaded."],
+            "descrption": "one of None (random initialization), 'imagenet' (pre-training on ImageNet), or the path to the weights file to be loaded"
+        },
+        "pooling" : {
+            "field"     : "Pooling",
+            "attribute" : "optional",
+            "defalut"   : "None"
+            "type"      : "String",
+            "values"    : ["None", "avg", "max"],
+            "descrption": "Optional pooling mode for feature extraction."
+        },
+        "validation_split" : {
+            "field"     : "Validation Split",
+            "attribute" : "optional",
+            "defalut"   : 0.2
+            "type"      : "Float",
+            "descrption": "Optional float between 0 and 1, fraction of data to reserve for validation."
+        },
+        "epochs" : {
+            "field"     : "epochs",
+            "attribute" : "mandatory",
+            "defalut"   : 50
+            "type"      : "Int",
+            "descrption": "Size of the epochs for training."
+        },
+        "batch_size" : {
+            "field"     : "Batch Size",
+            "attribute" : "optional",
+            "defalut"   : 32
+            "type"      : "Int",
+            "descrption": "Size of the batches of data."
+        },
+        "shuffle" : {
+            "field"     : "Shuffle",
+            "attribute" : "optional",
+            "defalut"   : True
+            "type"      : "Boolean",
+            "values"    : [True, False]
+            "descrption": "Whether to shuffle the data. Default: True. If set to False, sorts the data in alphanumeric order."
+        },
+        "interpolation" : {
+            "field"     : "Interpolation",
+            "attribute" : "optional",
+            "defalut"   : "bicubic",
+            "type"      : "String",
+            "values"    : ["bilinear", "nearest", "bicubic", "area", "lanczos3", "lanczos5", "gaussian", "mitchellcubic"],
+            "descrption": "the interpolation method used when resizing images. Defaults to bilinear. Supports bilinear, nearest, bicubic, area, lanczos3, lanczos5, gaussian, mitchellcubic."
+        },
+        "optimizer" : {
+            "field"     : "Optimizer",
+            "attribute" : "optional",
+            "defalut"   : "adam",
+            "type"      : "String",
+            "values"    : ["sga", "adagrad", "adadelta", "adam"],
+            "descrption": "An optimizer is one of the two arguments required for compiling a Keras model."
+        },
+        "learning_rate" : {
+            "field"     : "learning_rate",
+            "attribute" : "optional",
+            "defalut"   : 0.00001,
+            "type"      : "Float",
+            "descrption": "The learning rate of your optimizer changes over time."
+        },
+        "loss" : {
+            "field"     : "Loss",
+            "attribute" : "optional",
+            "defalut"   : "mse",
+            "type"      : "String",
+            "values"    : ["mse", "sparse_categorical_crossentropy"],
+            "descrption": "The purpose of loss functions is to compute the quantity that a model should seek to minimize during training."
+        },
+        "metrics" : {
+            "field"     : "Metrics",
+            "attribute" : "optional",
+            "defalut"   : "accuracy",
+            "type"      : "String",
+            "values"    : ["accuracy", "sparse_accuracy", "sparse_categorical_accuracy"],
+            "descrption": "A metric is a function that is used to judge the performance of your model."
+        }
+    },
+    "dataset" : ["\Example\dataset\ImageNet\cats", "\Example\dataset\ImageNet\dogs", "\Example\dataset\ImageNet\test"],
+    "validation_dataset" : ["\Example\dataset\ImageNet\cats", "\Example\dataset\ImageNet\dogs", "\Example\dataset\ImageNet\test"],
+    "category" : "image classification",
+    "models" : [
+        {
+            "name"              : "Mod_A",
+            "model_template"    : "/Example/template/models/ResNet50/ResNet50.template.py",
+        },
+        {
+            "name"              : "Mod_B",
+            "model_template"    : "/Example/template/models/VGG16/VGG16.template.py",
+        },
+        {
+            "name"              : "Mod_C",
+            "model_template"    : "/Example/template/models/InceptionV3/InceptionV3.template.py",
+        }
+    ]
+}
